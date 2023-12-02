@@ -23,6 +23,7 @@ class Student{
     int rollNo;
     String pass;
 
+    // copy constructor
     Student(Student s1){
             this.name = s1.name;
             this.rollNo = s1.rollNo; 
@@ -31,6 +32,8 @@ class Student{
     // Student(String nm){
         // this.name = nm;
     // }
+
+    // Constructor overloading, it is a example of polomorphism (means: multiple forms)
     Student(){
         System.out.println("Halwa hai dosto");
     }
@@ -40,6 +43,5 @@ class Student{
     Student(int roll){
         this.rollNo = roll;
     }
-    
-
+ 
 }
