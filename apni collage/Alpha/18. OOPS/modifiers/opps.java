@@ -1,4 +1,3 @@
-package modifiers;
 import java.util.*;
 
 
@@ -38,6 +37,13 @@ public class opps {
         ba.setPass("123");
         System.out.println(ba.name);
         System.out.println(ba.getPassward());
+
+        // new me
+        NewMe nm1 = new NewMe();
+        nm1.setWhy("I just want to make everything right, and make everyone happy.");
+        System.out.println(nm1.getWhy());
+        nm1.setHow("I will do what every i can, i will go beond my limits. i will become the the person thet no one see before i there life, beyond there imigination, from now own i dont care about anything and anyone. Its time to do something");
+        System.out.println(nm1.getHow());
     }
 }
 
@@ -105,5 +111,24 @@ class BankAccount{
     }
     String getPassward(){
         return this.passward;
+    }
+}
+
+class NewMe{
+    String why;
+    String how;
+
+    void setWhy(String newWhy){
+        this.why = newWhy;
+    }
+    void setHow(String newHow){
+        this.how = newHow;
+    }
+
+    String getWhy(){
+        return this.why;
+    }
+    String getHow(){
+        return this.how;
     }
 }
