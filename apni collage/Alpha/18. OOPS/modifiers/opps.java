@@ -5,6 +5,7 @@ import java.util.*;
 public class opps {
     public static void main(String[] args) {
         // Pennfo
+        // Halwa hai dosto.
         Pen p1 = new Pen();
         p1.setColor("yello");
         
