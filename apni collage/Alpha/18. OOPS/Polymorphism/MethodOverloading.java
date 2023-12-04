@@ -20,4 +20,3 @@ class Calc{
         return a+b+c;
     }
 }
-
