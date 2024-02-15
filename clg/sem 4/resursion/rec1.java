@@ -10,10 +10,18 @@ public class rec1 {
         printNum(num-1);
     }
 
-    public static Strig revStr(String str) {
+    public static void revStr(String str) {
         
+        if(str.length() >= 0){
+            Character ch = str.charAt(str.length()-1);
+            revStr(str);
+        }
 
-        revStr()
+
+
+        Character ch = str.charAt(str.length()-1);
+        revStr(str);
+        if()
     }
 
     public static void main(String[] args) {
