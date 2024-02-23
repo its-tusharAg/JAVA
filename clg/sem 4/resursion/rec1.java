@@ -45,6 +45,18 @@ public class rec1 {
         return sm;
     }
 
+    public static void smArr(int[] arr){
+
+        int i = 0;
+        int sm = 0;
+        if(i > arr.length){
+            sm = arr[i];
+            return;
+        }
+            smArr(arr);
+        return sm;   
+    }
+
     public static void main(String[] args) {
         printNum(10);
         System.out.println();
