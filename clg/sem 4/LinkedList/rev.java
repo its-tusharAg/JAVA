@@ -1,19 +1,18 @@
-public class rev {
+public class rev{
     public static class Node{
         int data;
-        Node next, pre;
+        Node next;
 
         public Node(int data){
             this.data = data;
             this.next = null;
-            this.pre = null;
         }
     }
 
-    static Node head, tail;
-    static int size;
-    
-    public void addFirst(int data){
+    public static Node head, tail;
+    public static int size;
+
+    public static void addFirst(int data){
         Node newNode = new Node(data);
         size++;
 
@@ -26,27 +25,27 @@ public class rev {
         head = newNode;
     }
 
-    public void addLast(int data){
+    public static void addLast(int data){
         Node newNode = new Node(data);
         size++;
+
         if(head == null){
             head = tail = newNode;
             return;
         }
 
-        tail.next = newNode;
+        Node temp = head;
+
+        while(temp != null && temp.next != null){
+            temp = temp.next;
+        }
+        temp.next = newNode;
         tail = newNode;
     }
 
-    public int removeFirst() {
-        if(head == null) {
+    public static int removeFirst(){
+        if(head == null){
             return -1;
-        }
-        else if(size == 1){
-            int val = head.data;
-            size = 0;
-            head = null;
-            return val;
         }
 
         int val = head.data;
@@ -59,37 +58,47 @@ public class rev {
         if(head == null){
             return -1;
         }
-        else if (size == 1) {
-            int val = head.data;
-            head = tail = null;
-            size = 0;
-            return val;
-        }
 
-        Node temp = head;
+        Node pre = head;
+
         for(int i=0; i<size-2; i++){
-            temp = temp.next;
+            pre = pre.next;
         }
 
-        int val = temp.next.data;
-        temp.next = null;
-        tail = temp;
-        size--;
+        int val = pre.next.data;
+        pre.next = null;
+        tail = pre;
         return val;
     }
+
+    public static int mid(){
+        if(head == null){
+            return -1;
+        }
+
+        Node slow = head;
+        Node fast = head;
+
+        while (fast != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return slow.data;
+    }
+
     public static void display(){
         if(head == null){
-            System.out.println("Empty");
+            System.out.println("empty");
             return;
         }
 
         Node temp = head;
 
-        while (temp != null) {
+        while(temp != null){
             System.out.println(temp.data);
             temp = temp.next;
         }
-
     }
 
     public static void main(String[] args) {
@@ -101,8 +110,10 @@ public class rev {
         ll.addFirst(2);
         ll.addFirst(1);
         ll.addLast(6);
-        ll.removeFirst();
-        ll.removeLast();
-        ll.display();
+        // ll.removeFirst();
+        // ll.removeLast();
+        System.out.println(ll.mid()); 
+        // ll.display();
+
     }
 }
