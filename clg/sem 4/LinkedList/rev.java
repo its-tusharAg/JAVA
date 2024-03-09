@@ -87,6 +87,16 @@ public class rev{
         return slow.data;
     }
 
+    public static int cnt(){
+        Node temp = head;
+        int cntNm = 0;
+
+        while(temp != null){
+            cntNm++;
+            temp = temp.next;
+        }
+        return cntNm;
+    }
     public static void display(){
         if(head == null){
             System.out.println("empty");
@@ -110,9 +120,11 @@ public class rev{
         ll.addFirst(2);
         ll.addFirst(1);
         ll.addLast(6);
+
+        System.out.println(ll.cnt());
         // ll.removeFirst();
         // ll.removeLast();
-        System.out.println(ll.mid()); 
+        // System.out.println(ll.mid()); 
         // ll.display();
 
     }
