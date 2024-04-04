@@ -21,7 +21,7 @@ public class binaryIntro{
             Node newNode = new Node(nodes[idx]);
             newNode.left = buidTree(nodes);
             newNode.right = buidTree(nodes);
-
+            
             return newNode;
         }
 
