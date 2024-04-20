@@ -51,7 +51,6 @@ public class LinkedListBasics {
         }
         newNode.next = temp.next;
         temp.next = newNode;
-
     }
 
     public int removeFirst(){
